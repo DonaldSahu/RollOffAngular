@@ -53,6 +53,13 @@ import { TempComponent } from './temp/temp.component';
 import { ViewEmployeeComponent } from './employees/view-employee/view-employee.component';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './login/login.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthGuardService } from './services/auth-guard.service';
+
+export function tokenGetter() { 
+  return localStorage.getItem("token"); 
+}
 
 @NgModule({
   declarations: [
@@ -61,7 +68,8 @@ import { CommonModule } from '@angular/common';
     EmployeesComponent,
     TempComponent,
     ViewEmployeeComponent,
-    FeedbackFormComponent
+    FeedbackFormComponent,
+    LoginComponent
   ],
   imports: [
     FormsModule,
@@ -106,10 +114,17 @@ import { CommonModule } from '@angular/common';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:44320"],
+        disallowedRoutes: []
+      }
+    })
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

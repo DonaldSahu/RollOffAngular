@@ -3,8 +3,8 @@
     <a routerLink="#" mat-fab color="accent" class="mat-button-base">
         <mat-icon>home</mat-icon>
     </a>
-    <a routerLink="app-employees" mat-button color="primary" mat-raised-button class="m1-1">Employees</a>
+    <a routerLink="app-login" *ngIf="!Isloggedin" mat-button color="primary" mat-raised-button class="m1-1">Login</a>
 
-<a routerLink="app-temp" mat-button color="primary" mat-raised-button class="m1-1">Temp</a>
+    <a *ngIf="Isloggedin" (click)="logout()"  mat-raised-button class="m1-1">Log out</a>
 </div>
 </mat-toolbar>

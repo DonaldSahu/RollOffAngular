@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl,} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { environment } from 'src/environments/environment.development';
-import { EmployeeDetailsService } from '../employees/employee-details.service';
+import { EmployeeDetailsService } from '../services/employee-details.service';
 
 
 @Component({
