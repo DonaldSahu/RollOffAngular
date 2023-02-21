@@ -14,35 +14,35 @@ namespace RollOffBackend.Repository
         {
             this.context = context;
         }
-        public async Task<FormTable> AddFormAsync(FormTable form)
+        public async Task<RolloffForm> AddFormAsync(RolloffForm form)
         {
-            await context.FormTables.AddAsync(form);
+            await context.RolloffForms.AddAsync(form);
             await context.SaveChangesAsync();
             return form;
         }
 
-        public async Task<FormTable> DeleteForm(double ggid)
+        public async Task<RolloffForm> DeleteForm(double ggid)
         {
-            var formDetails = await context.FormTables.FirstOrDefaultAsync(x => x.GlobalGroupId == ggid);
-            context.FormTables.Remove(formDetails);
+            var formDetails = await context.RolloffForms.FirstOrDefaultAsync(x => x.GlobalGroupId == ggid);
+            context.RolloffForms.Remove(formDetails);
             await context.SaveChangesAsync();
             return formDetails;
         }
 
-        public async Task<IEnumerable<FormTable>> GetDetailsAsync()
+        public async Task<IEnumerable<RolloffForm>> GetDetailsAsync()
         {
-            return await context.FormTables.ToListAsync();
+            return await context.RolloffForms.ToListAsync();
         }
 
-        public async Task<FormTable> GetDetailsGGID(double ggid)
+        public async Task<RolloffForm> GetDetailsGGID(double ggid)
         {
-            var formdetails = await context.FormTables.FirstOrDefaultAsync(x => x.GlobalGroupId == ggid);
+            var formdetails = await context.RolloffForms.FirstOrDefaultAsync(x => x.GlobalGroupId == ggid);
             return formdetails;
         }
 
-        public async Task<FormTable> UpdateForm(double ggid, FormTable form)
+        public async Task<RolloffForm> UpdateForm(double ggid, RolloffForm form)
         {
-            var existingemployee = await context.FormTables.FirstOrDefaultAsync(x => x.GlobalGroupId == ggid);
+            var existingemployee = await context.RolloffForms.FirstOrDefaultAsync(x => x.GlobalGroupId == ggid);
             if(existingemployee == null)
             {
                 return null;
@@ -53,10 +53,10 @@ namespace RollOffBackend.Repository
             existingemployee.LocalGrade = form.LocalGrade;
             existingemployee.ProjectCode = form.ProjectCode;
             existingemployee.ProjectName = form.ProjectName;
-            existingemployee.Practise = form.Practise;
+            existingemployee.Practice = form.Practice;
             existingemployee.RollOffEndDate = form.RollOffEndDate;
             existingemployee.ReasonForRollOff = form.ReasonForRollOff;
-            existingemployee.ThisReleaseNeedBackfillIsBackfilled = form.ThisReleaseNeedBackfillIsBackfilled;
+            existingemployee.ThisReleaseNeedBackfillIsBackFilled = form.ThisReleaseNeedBackfillIsBackFilled;
             existingemployee.PerformanceIssue = form.PerformanceIssue;
             existingemployee.Resigned = form.Resigned;
             existingemployee.UnderProbation = form.UnderProbation;
@@ -68,6 +68,9 @@ namespace RollOffBackend.Repository
             existingemployee.RelevantExperienceYrs = form.RelevantExperienceYrs;
             existingemployee.Status = form.Status;
             existingemployee.RequestDate = form.RequestDate;
+            existingemployee.RollOffStartDate = form.RollOffEndDate;
+            existingemployee.OtherReasons = form.OtherReasons;
+            existingemployee.Labour = form.Labour;
 
             await context.SaveChangesAsync();
             return existingemployee;

@@ -8,6 +8,6 @@ namespace RollOffBackend.Repository
 {
     public interface ILoginRepository
     {
-        Task<LoginTable> AddLoginDetailsAsync(LoginTable loginTable);
+        Task<User> AddLoginDetailsAsync(User users);
     }
 }

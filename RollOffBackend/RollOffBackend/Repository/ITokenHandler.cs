@@ -8,6 +8,6 @@ namespace RollOffBackend.Repository
 {
     public interface ITokenHandler
     {
-        Task<string> CreateTokenAsync(LoginTable loginTable);
+        Task<string> CreateTokenAsync(User users);
     }
 }

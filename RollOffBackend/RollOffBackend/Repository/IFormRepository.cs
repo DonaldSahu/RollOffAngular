@@ -8,10 +8,10 @@ namespace RollOffBackend.Repository
 {
     public interface IFormRepository
     {
-        Task<FormTable> AddFormAsync(FormTable form);
-        Task<IEnumerable<FormTable>> GetDetailsAsync();
-        Task<FormTable> GetDetailsGGID(double ggid);
-        Task<FormTable> UpdateForm(double ggid, FormTable form);
-        Task<FormTable> DeleteForm(double ggid);
+        Task<RolloffForm> AddFormAsync(RolloffForm form);
+        Task<IEnumerable<RolloffForm>> GetDetailsAsync();
+        Task<RolloffForm> GetDetailsGGID(double ggid);
+        Task<RolloffForm> UpdateForm(double ggid, RolloffForm form);
+        Task<RolloffForm> DeleteForm(double ggid);
     }
 }

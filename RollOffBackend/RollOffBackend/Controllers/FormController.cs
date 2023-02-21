@@ -29,7 +29,7 @@ namespace RollOffBackend.Controllers
         {
             try
             {
-                var formdetails = mapper.Map<FormTable>(formTableDTO);
+                var formdetails = mapper.Map<RolloffForm>(formTableDTO);
                 var form = await formRepository.AddFormAsync(formdetails);
                 if(form == null)
                 {
@@ -87,7 +87,7 @@ namespace RollOffBackend.Controllers
         {
             try
             {
-                var empdetails = mapper.Map<FormTable>(updateFormDTO);
+                var empdetails = mapper.Map<RolloffForm>(updateFormDTO);
                 var employee = await formRepository.UpdateForm(ggid, empdetails);
                 if (employee == null)
                 {

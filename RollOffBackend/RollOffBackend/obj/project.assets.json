@@ -5790,11 +5790,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADHANAIT\\source\\repos\\RollOffBackend\\RollOffBackend\\RollOffBackend.csproj",
+      "projectUniqueName": "C:\\Users\\ADHANAIT\\OneDrive - Capgemini\\Desktop\\RollOffAngular\\RollOffBackend\\RollOffBackend\\RollOffBackend.csproj",
       "projectName": "RollOffBackend",
-      "projectPath": "C:\\Users\\ADHANAIT\\source\\repos\\RollOffBackend\\RollOffBackend\\RollOffBackend.csproj",
+      "projectPath": "C:\\Users\\ADHANAIT\\OneDrive - Capgemini\\Desktop\\RollOffAngular\\RollOffBackend\\RollOffBackend\\RollOffBackend.csproj",
       "packagesPath": "C:\\Users\\ADHANAIT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADHANAIT\\source\\repos\\RollOffBackend\\RollOffBackend\\obj\\",
+      "outputPath": "C:\\Users\\ADHANAIT\\OneDrive - Capgemini\\Desktop\\RollOffAngular\\RollOffBackend\\RollOffBackend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

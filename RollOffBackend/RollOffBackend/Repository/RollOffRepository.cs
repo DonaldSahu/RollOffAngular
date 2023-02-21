@@ -17,19 +17,19 @@ namespace RollOffBackend.Repository
             this.roll_OffContext = roll_OffContext;
         }
 
-        public async Task<IEnumerable<RollOffTable>> GetallDetailsAsync()
+        public async Task<IEnumerable<MasterTable>> GetallDetailsAsync()
         {
-            var employees = await roll_OffContext.RollOffTables.ToListAsync();
+            var employees = await roll_OffContext.MasterTables.ToListAsync();
             return employees;
         }
-        public async Task<RollOffTable> GetbyGGIDAsync(double ggid)
+        public async Task<MasterTable> GetbyGGIDAsync(double ggid)
         {
-            var employee = await roll_OffContext.RollOffTables.FirstOrDefaultAsync(x => x.GlobalGroupId == ggid);
+            var employee = await roll_OffContext.MasterTables.FirstOrDefaultAsync(x => x.GlobalGroupId == ggid);
             return employee;
         }
-        public async Task<RollOffTable> GetbyEmailAsync(string value)
+        public async Task<MasterTable> GetbyEmailAsync(string value)
         {
-            return await roll_OffContext.RollOffTables.FirstOrDefaultAsync(x => x.Email == value);
+            return await roll_OffContext.MasterTables.FirstOrDefaultAsync(x => x.Email == value);
         }
         /*public async Task<RollOffTable> GetbyNameAsync(string name)
         {

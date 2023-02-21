@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace RollOffBackend.Models
 {
-    public partial class RollOffTable
+    public partial class MasterTable
     {
-        public RollOffTable()
+        public MasterTable()
         {
-            FormTables = new HashSet<FormTable>();
+            RolloffForms = new HashSet<RolloffForm>();
         }
 
         public string Country { get; set; }
@@ -30,6 +30,6 @@ namespace RollOffBackend.Models
         public string NewGlobalPractice { get; set; }
         public string OfficeCity { get; set; }
 
-        public virtual ICollection<FormTable> FormTables { get; set; }
+        public virtual ICollection<RolloffForm> RolloffForms { get; set; }
     }
 }

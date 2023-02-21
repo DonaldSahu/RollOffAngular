@@ -8,6 +8,6 @@ namespace RollOffBackend.Repository
 {
     public interface IUserRepository
     {
-        Task<LoginTable> AuthenticateUserAsync(string email, string password);
+        Task<User> AuthenticateUserAsync(string email, string password);
     }
 }

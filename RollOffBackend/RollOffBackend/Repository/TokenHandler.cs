@@ -19,16 +19,15 @@ namespace RollOffBackend.Repository
         {
             this.configuration = configuration;
         }
-        public Task<string> CreateTokenAsync(LoginTable loginTable)
+        public Task<string> CreateTokenAsync(User users)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
 
             //Creating claims
             var claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.GivenName, loginTable.FirstName));
-            claims.Add(new Claim(ClaimTypes.Surname, loginTable.LastName));
-            claims.Add(new Claim(ClaimTypes.Email, loginTable.Email));
-            claims.Add(new Claim(ClaimTypes.Role, loginTable.Roles));
+            claims.Add(new Claim(ClaimTypes.GivenName, users.Username));
+            claims.Add(new Claim(ClaimTypes.Email, users.Email));
+            claims.Add(new Claim(ClaimTypes.Role, users.Department));
 
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

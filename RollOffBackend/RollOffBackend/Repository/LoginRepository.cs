@@ -14,11 +14,11 @@ namespace RollOffBackend.Repository
         {
             this.context = context;
         }
-        public async Task<LoginTable> AddLoginDetailsAsync(LoginTable loginTable)
+        public async Task<User> AddLoginDetailsAsync(User users)
         {
-            await context.LoginTables.AddAsync(loginTable);
+            await context.Users.AddAsync(users);
             await context.SaveChangesAsync();
-            return loginTable;
+            return users;
         }
     }
 }

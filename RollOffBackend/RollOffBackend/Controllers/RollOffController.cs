@@ -36,7 +36,7 @@ namespace RollOffBackend.Controllers
                 {
                     return NotFound();
                 }
-                var rolloffdetailsdto = mapper.Map<List<RollOffTableDTO>>(rolloffdetails);
+                var rolloffdetailsdto = mapper.Map<List<MasterTableDTO>>(rolloffdetails);
                 return Ok(rolloffdetailsdto);
             }
             catch (Exception e)
@@ -56,7 +56,7 @@ namespace RollOffBackend.Controllers
                 {
                     return NotFound();
                 }
-                var employeedetailsdto = mapper.Map<RollOffTableDTO>(employeedetails);
+                var employeedetailsdto = mapper.Map<MasterTableDTO>(employeedetails);
                 return Ok(employeedetailsdto);
             }
             catch (Exception e)
@@ -76,7 +76,7 @@ namespace RollOffBackend.Controllers
                 {
                     return NotFound();
                 }
-                var employeedetailsdto = mapper.Map<RollOffTableDTO>(employeedetails);
+                var employeedetailsdto = mapper.Map<MasterTableDTO>(employeedetails);
                 return Ok(employeedetailsdto);
             }
             catch (Exception e)

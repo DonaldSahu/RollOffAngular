@@ -14,9 +14,9 @@ namespace RollOffBackend.Repository
         {
             this.context = context;
         }
-        public async Task<LoginTable> AuthenticateUserAsync(string email, string password)
+        public async Task<User> AuthenticateUserAsync(string email, string password)
         {
-            var user = await context.LoginTables.FirstOrDefaultAsync(x => x.Email == email && x.Password == password);
+            var user = await context.Users.FirstOrDefaultAsync(x => x.Email == email && x.Password == password);
             return user;
         }
     }

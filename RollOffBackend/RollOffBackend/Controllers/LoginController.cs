@@ -24,9 +24,9 @@ namespace RollOffBackend.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddLoginDetails(LoginTableDTO loginTableDTO)
+        public async Task<IActionResult> AddLoginDetails(UserDTO loginTableDTO)
         {
-            var employeeDTO = mapper.Map<LoginTable>(loginTableDTO);
+            var employeeDTO = mapper.Map<User>(loginTableDTO);
             var employee = await loginRepository.AddLoginDetailsAsync(employeeDTO);
             return Ok(employeeDTO);
         }

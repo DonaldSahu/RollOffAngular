@@ -12,9 +12,9 @@ namespace RollOffBackend.Repository
         //search by ggid
         //search by email
         //search by name
-        Task<IEnumerable<RollOffTable>> GetallDetailsAsync();
-        Task<RollOffTable> GetbyGGIDAsync(double ggid);
-        Task<RollOffTable> GetbyEmailAsync(string email);
+        Task<IEnumerable<MasterTable>> GetallDetailsAsync();
+        Task<MasterTable> GetbyGGIDAsync(double ggid);
+        Task<MasterTable> GetbyEmailAsync(string email);
         //Task<RollOffTable> GetbyNameAsync(string name);
     }
 }

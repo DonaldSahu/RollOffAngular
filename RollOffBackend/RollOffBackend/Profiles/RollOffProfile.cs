@@ -12,10 +12,10 @@ namespace RollOffBackend.Profiles
     { 
         public RollOffProfile()
         {
-            CreateMap<RollOffTable, RollOffTableDTO>().ReverseMap();
-            CreateMap<LoginTable, LoginTableDTO>().ReverseMap();
-            CreateMap<FormTable, FormTableDTO>().ReverseMap();
-            CreateMap<FormTable, UpdateFormDTO>().ReverseMap();
+            CreateMap<MasterTable, MasterTableDTO>().ReverseMap();
+            CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<RolloffForm, FormTableDTO>().ReverseMap();
+            CreateMap<RolloffForm, UpdateFormDTO>().ReverseMap();
         }
     }
 }

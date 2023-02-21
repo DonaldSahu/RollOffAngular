@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RollOffBackend.DTO
 {
-    public class RollOffTableDTO
+    public class MasterTableDTO
     {
         public string Country { get; set; }
         public double GlobalGroupId { get; set; }
