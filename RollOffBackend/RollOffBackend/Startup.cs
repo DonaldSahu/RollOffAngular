@@ -1,22 +1,15 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using RollOffBackend.Models;
 using RollOffBackend.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RollOffBackend
 {
@@ -41,6 +34,7 @@ namespace RollOffBackend
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddScoped<ITokenHandler, RollOffBackend.Repository.TokenHandler>();
             services.AddScoped<IFormRepository, FormRepository>();
+            services.AddScoped<IEmailRepository, EmailRepository>();
 
             //adding automapper
             services.AddAutoMapper(typeof(Startup).Assembly);
@@ -100,6 +94,8 @@ namespace RollOffBackend
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            app.UseCors(policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
             app.UseEndpoints(endpoints =>
             {

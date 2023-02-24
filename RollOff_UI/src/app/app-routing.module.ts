@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmployeesComponent } from './employees/employees.component';
-import { ViewEmployeeComponent } from './employees/view-employee/view-employee.component';
+import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './services/auth-guard.service';

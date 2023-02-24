@@ -15,7 +15,7 @@ namespace RollOffBackend.Repository
             this.context = context;
         }
         public async Task<RolloffForm> AddFormAsync(RolloffForm form)
-        {
+        { 
             await context.RolloffForms.AddAsync(form);
             await context.SaveChangesAsync();
             return form;

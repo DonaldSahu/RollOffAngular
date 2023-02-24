@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+<div class="container">
+    <a routerLink="#" mat-fab color="accent" class="mat-button-base">
+        <mat-icon>home</mat-icon>
+    </a>
+    <!-- {{Isloggedin}}?<a (click)="logout()"  mat-raised-button class="m1-1">Log out</a>{{:}}<a routerLink="app-login" mat-button color="primary" mat-raised-button class="m1-1">Login</a> -->
+    <a routerLink="app-login" *ngIf="Isloggedin" mat-raised-button class="m1-1" (click)="logout()">Logout</a>
+    <a routerLink="app-login" *ngIf="!Isloggedin" mat-raised-button class="m1-1">Login</a>
+</div>
+</mat-toolbar>

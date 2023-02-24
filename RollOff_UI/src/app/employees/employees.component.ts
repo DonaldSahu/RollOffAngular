@@ -20,7 +20,7 @@ export class EmployeesComponent implements OnInit {
   constructor(private employeeDetailsService: EmployeeDetailsService){}
 
   ngOnInit(): void {
-    //fetch employees
+        //fetch employees
     this.employeeDetailsService.getEmployee().subscribe((successResponse)=>{
       this.employees=successResponse;
       this.dataSource=new MatTableDataSource<any>(this.employees);

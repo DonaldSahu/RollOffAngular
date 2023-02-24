@@ -26,20 +26,20 @@ namespace RollOffBackend.Controllers
         [Route("Login")]
         public async Task<IActionResult> LoginAsync(LoginRequestDTO loginRequestDTO)
         {
-            if(loginRequestDTO.Email==null && loginRequestDTO.Password == null)
+            if(loginRequestDTO.Email==null && loginRequestDTO.Password == null && loginRequestDTO.Department==null)
             {
                 return NotFound("email or password is null");
             }
             //we check if user is authenticated which is check the username and password is present 
             // in our database.
-            var user = await userRepository.AuthenticateUserAsync(loginRequestDTO.Email, loginRequestDTO.Password);
+            var user = await userRepository.AuthenticateUserAsync(loginRequestDTO.Email, loginRequestDTO.Password,loginRequestDTO.Department);
             if (user != null)
             {
                 //generate jwt token
                 var token = handler.CreateTokenAsync(user);
-                return Ok(token.Result);
+                return Ok(token);
             }
-            return BadRequest("Username or password is incorrect");
+            return BadRequest("Username or password is incorrect or role is incorrect");
         }
     }
 }

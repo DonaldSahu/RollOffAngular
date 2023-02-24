@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
-import { EmployeeDetailsService } from '../../services/employee-details.service';
+import { EmployeeDetailsService } from '../services/employee-details.service';
 
 @Component({
   selector: 'app-view-employee',

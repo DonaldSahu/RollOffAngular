@@ -46,11 +46,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { TopNavComponent } from './layout/top-nav/top-nav.component';
+import { TopNavComponent } from './top-nav/top-nav.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TempComponent } from './temp/temp.component';
-import { ViewEmployeeComponent } from './employees/view-employee/view-employee.component';
+import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
@@ -124,7 +124,8 @@ export function tokenGetter() {
     })
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  providers: [AuthGuardService],
+  providers: [AuthGuardService,
+              TopNavComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

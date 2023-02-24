@@ -13,7 +13,7 @@ export class TopNavComponent implements OnInit{
   constructor(private empservice:EmployeeDetailsService){}
 
   ngOnInit(): void {
-   this.checkstorage();
+    this.checkstorage();
   }
 
   checkstorage()
@@ -22,11 +22,16 @@ export class TopNavComponent implements OnInit{
     if(this.user!=null){
       this.Isloggedin =true;
     }
+    // this.Isloggedin = this.empservice.navLogin();
+    // console.log(this.Isloggedin);
+    
   }
+
   logout()
   {
     localStorage.clear();
     this.Isloggedin=false;
-    console.log(this.Isloggedin);
   }
+
+
 }

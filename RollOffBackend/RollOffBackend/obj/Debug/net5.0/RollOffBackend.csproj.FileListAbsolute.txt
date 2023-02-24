@@ -134,3 +134,11 @@ C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\Rol
 C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\RollOffBackend\obj\Debug\net5.0\ref\RollOffBackend.dll
 C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\RollOffBackend\obj\Debug\net5.0\RollOffBackend.pdb
 C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\RollOffBackend\obj\Debug\net5.0\RollOffBackend.genruntimeconfig.cache
+C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\RollOffBackend\bin\Debug\net5.0\MailKit.dll
+C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\RollOffBackend\bin\Debug\net5.0\MimeKit.dll
+C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\RollOffBackend\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\RollOffBackend\bin\Debug\net5.0\System.Formats.Asn1.dll
+C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\RollOffBackend\bin\Debug\net5.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\RollOffBackend\bin\Debug\net5.0\System.Text.Encoding.CodePages.dll
+C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\RollOffBackend\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\ADHANAIT\OneDrive - Capgemini\Desktop\RollOffAngular\RollOffBackend\RollOffBackend\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Text.Encoding.CodePages.dll

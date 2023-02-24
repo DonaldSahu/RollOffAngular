@@ -35,7 +35,7 @@ namespace RollOffBackend.Controllers
                 {
                     return NotFound("details not added");
                 }
-                return Ok(formTableDTO);
+                return Ok("Success");
             }
             catch(Exception e)
             {
