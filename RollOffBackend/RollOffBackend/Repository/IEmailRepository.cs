@@ -9,5 +9,7 @@ namespace RollOffBackend.Repository
     public interface IEmailRepository
     {
         void SendEmail(EmailDTO email);
+
+        void PasswordVerificationEmail(ForgotPasswordDTO forgotPasswordDTO,string token);
     }
 }

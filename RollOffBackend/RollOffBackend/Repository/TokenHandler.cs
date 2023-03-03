@@ -36,5 +36,21 @@ namespace RollOffBackend.Repository
 
             return Task.FromResult(new JwtSecurityTokenHandler().WriteToken(token));
         }
+
+        public Task<string> GeneratePasswordTokenAsync(User users)
+        {
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:key"]));
+
+            //creating claims
+            var claims = new List<Claim>();
+            claims.Add(new Claim(ClaimTypes.Email, users.Email));
+
+            var credentails = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(configuration["Jwt:Issuer"], configuration["Jwt:Audience"], claims,
+                expires: DateTime.Now.AddMinutes(5), signingCredentials: credentails);
+
+            return Task.FromResult(new JwtSecurityTokenHandler().WriteToken(token));
+        }
     }
 }

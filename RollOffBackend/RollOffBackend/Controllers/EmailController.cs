@@ -23,9 +23,15 @@ namespace RollOffBackend.Controllers
         [HttpPost]
         public IActionResult SendEmail(EmailDTO email)
         {
-            
-            emailRepository.SendEmail(email);
-            return Ok();
+            try
+            {
+                emailRepository.SendEmail(email);
+                return Ok();
+            }
+            catch(Exception e)
+            {
+                return BadRequest("something went wrong while sending email" + e);
+            }
         }
     }
 }

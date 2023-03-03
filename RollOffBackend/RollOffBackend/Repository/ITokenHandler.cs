@@ -9,5 +9,6 @@ namespace RollOffBackend.Repository
     public interface ITokenHandler
     {
         Task<string> CreateTokenAsync(User users);
+        Task<string> GeneratePasswordTokenAsync(User users);
     }
 }

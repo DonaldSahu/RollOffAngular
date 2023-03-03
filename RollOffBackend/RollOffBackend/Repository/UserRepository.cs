@@ -19,5 +19,24 @@ namespace RollOffBackend.Repository
             var user = await context.Users.FirstOrDefaultAsync(x => x.Email == email && x.Password == password && x.Department==department);
             return user;
         }
+
+        public async Task<User> FindByEmailAsync(string email)
+        {
+            var user = await context.Users.FirstOrDefaultAsync(x => x.Email == email);
+            return user;
+        }
+
+        public async Task<User> ResetPasswordAsync(string email, string password)
+        {
+            var user = await context.Users.FirstOrDefaultAsync(x => x.Email == email);
+            if (user == null)
+            {
+                return null;
+            }
+            user.Password = password;
+            //await context.AddAsync(user);
+            await context.SaveChangesAsync();
+            return user;
+        }
     }
 }
